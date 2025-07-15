@@ -14,7 +14,7 @@ const pool = new Pool({
 });
 
 app.use(cors({
-    origin: ['http://44.203.74.159:5500', 'http://127.0.0.1:5500']
+    origin: ['http://44.203.74.159:8144', 'http://44.203.74.159:8145', 'http://127.0.0.1:5500']
 }));
 app.use(express.json());
 
