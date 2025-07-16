@@ -7,13 +7,13 @@ services:
     restart: always
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: admin834
+      POSTGRES_PASSWORD: admin123
       POSTGRES_DB: new_employee_db
     volumes:
       - pgdata:/var/lib/postgresql/data
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
-      - "5492:5432"
+      - "5102:5432"
 
   backend:
     build: ./Backend
@@ -21,10 +21,10 @@ services:
     depends_on:
       - postgres
     ports:
-      - "3092:3092"
+      - "3102:3102"
     environment:
       DB_USER: postgres
-      DB_PASSWORD: admin834
+      DB_PASSWORD: admin123
       DB_NAME: new_employee_db
       DB_HOST: postgres
       DB_PORT: 5432
@@ -35,7 +35,7 @@ services:
     build: ./Fronted
     container_name: leave_frontend
     ports:
-      - "8144:80"
+      - "8172:80"
     depends_on:
       - backend
     volumes:
@@ -45,7 +45,7 @@ services:
     build: ./HR_Page
     container_name: leave_hrpage
     ports:
-      - "8145:80"
+      - "8173:80"
     depends_on:
       - backend
     volumes:

@@ -2,19 +2,19 @@ const express = require('express');
 const { Pool } = require('pg');
 const cors = require('cors');
 const app = express();
-const port = 3092;
+const port = 3102;
 const host = '0.0.0.0';
 
 const pool = new Pool({
     user: 'postgres',
     host: 'postgres',
     database: 'new_employee_db',
-    password: 'admin834',
+    password: 'admin123',
     port: 5432,
 });
 
 app.use(cors({
-    origin: ['http://44.203.74.159:8144', 'http://44.203.74.159:8145', 'http://127.0.0.1:5500']
+    origin: ['http://13.51.85.176:8172', 'http://13.51.85.176:8173', 'http://127.0.0.1:5500']
 }));
 app.use(express.json());
 
